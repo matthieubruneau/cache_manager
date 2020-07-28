@@ -2,13 +2,27 @@
 Tool using Houdini to handle local caching
 This is made using python3 as python 2.7 is now deprecated and won't be updated anymore
 
+## Description
+This tool is a cache manager. This will allows you to start your caches without opening Houdini as if you were using the command line.
 
+## Prerequisites
 This has been tested only on Windows 10 while using Houdini python3 build (we can't use PySide2 in Windows unless you compile it).
-To make it work, you will have to add one environment variable to your system and add some modules to python to make it work. If needed, I might make a system which will handle that by itelf.
+PySide2
+QtPy
 
-First, you need to have Houdini\bin in your Path variable. Here is how to do it:
-    First, go to your Advanced Systems Parameters -> Environment variables. Under System Variables, select Path and click edit. Add this line and put it first:
-  \Houdini_installation_folder\bin DON'T FORGET THAT THIS MUST BE A PYTHON3 HOUDINI BUILD
+
+### Installation
+You will need to add the path of the \bin folder to the Windows System variable variable.
+This should look like this:
+```
+C:\Program Files\Side Effects Software\Houdini 18.0.502_Py3\bin
+```
+
+Once you have done that, create a houdini_module.pth file and put it inside the site-packages of your python install.
+To find out where your python is, open a shell and type:
+```
+where python
+```
  
 Then, you must tells python where the hou module is located. I found the easiest way to do without touching too much to the environment variables was to use a .pth file. This file will be place inside the pyton\lib\site-packages folder. 
 The default installation of python is there: C:\users\<USER>\Local Settings\Application Data\Programs\Python\Python37
