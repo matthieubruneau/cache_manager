@@ -44,3 +44,9 @@ where python
 ```
 This will allows Python to find the Houdini python module
 
+### How to run the script
+To run the script, go with a shell to the folder where you put your downloaded script and in a shell:
+```
+python main.py
+```
+To have this working, python must be inside your PATH System variables 
